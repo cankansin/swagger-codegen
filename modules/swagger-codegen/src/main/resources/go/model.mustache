@@ -25,6 +25,6 @@ type {{classname}} struct {
 {{#description}}
 	// {{{description}}}
 {{/description}}
-	{{name}} {{^isEnum}}{{^isPrimitiveType}}{{^isContainer}}{{^isDateTime}}*{{/isDateTime}}{{/isContainer}}{{/isPrimitiveType}}{{/isEnum}}{{{datatype}}} `json:"{{baseName}}{{^required}},omitempty{{/required}}"{{#withXml}} xml:"{{baseName}}"{{/withXml}}`
+	{{name}} {{^isEnum}}{{^isPrimitiveType}}{{^isContainer}}{{^isDateTime}}*{{/isDateTime}}{{/isContainer}}{{/isPrimitiveType}}{{/isEnum}}{{{datatype}}} `json:"{{baseName}}{{^required}},omitempty{{/required}}"{{#withXml}} xml:"{{baseName}}{{#isXmlAttribute}},attr{{/isXmlAttribute}}"{{/withXml}}`
 {{/vars}}
 }{{/isEnum}}{{/model}}{{/models}}
